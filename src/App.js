@@ -5,6 +5,7 @@ import Sphere from "./components/Sphere";
 import { OrbitControls, Stars } from "@react-three/drei";
 import Glb from "./components/Glb"
 import { Suspense } from "react";
+import Home from "./pages/Home";
 
 function App() {
   /*
@@ -19,33 +20,8 @@ function App() {
       </ThreeScene> 
   */
   return (
-    <div className="App" style={{ height: "80vh", width:"100vw"}}>
-      <Glb/>
-      <div>
-        
-        
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        
-        <h2>klads</h2>
-        
-
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-        <h2>klads</h2>
-
-      </div>
+    <div className="App" >
+      <Home />
     </div> 
   );
 }
