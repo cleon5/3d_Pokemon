@@ -12,7 +12,7 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import { CircleGeometry } from "three";
 
-function Glb() {
+function Glb({pokemon=''}) {
   //const group = useRef()
   //const { nodes, materials } = useGLTF('/Bulbasaur.glt')
   /*const x = ()=> {
@@ -44,7 +44,7 @@ function Glb() {
         <Circle />
         <OrbitControls target={[0, 0, 0]} />
       </Canvas>
-      <p className="namePokemon">bulbasaur</p>
+      <p className="namePokemon">{pokemon}</p>
     </div>
   );
 }

@@ -2,7 +2,8 @@
   height: 100vh;
   width: 100%;
   display: flex;
-
+  text-transform: capitalize;
+  color: white;
 }
 .modelSection{
   width: 50%;
@@ -10,16 +11,25 @@
   top: 0;
   position: sticky;
   z-index: 1;
-  background-color: red;
+  background-color: rgb(156, 11, 11);
 }
 .infomation{
   width: 50%;
-  background-color: red;
+  background-color: rgb(163, 4, 4);
   overflow-y: scroll;
+  color: white;
+}
+.title h1{
+  text-align: center;
+}
+hr{
+  width: 80%;
+  color: yellow;
+  border: 1px solid yellow;
 }
 .canvas{
   margin: 5%;
-  height: 95%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,4 +41,35 @@
   margin: 0;
   padding: 0;
   font-size: 2.1rem;
+}
+.section{
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px double yellow ;
+}
+.section h2{
+  margin: 0;
+  text-align: center;
+}
+.stacks{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.stacks p{
+  width: 100px;
+}
+.types{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.Badge{
+  padding: 10px;
+  width: 40%;
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(30, 34, 34);
+  border-radius: 10px;
 }
