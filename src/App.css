@@ -11,11 +11,11 @@
   top: 0;
   position: sticky;
   z-index: 1;
-  background-color: rgb(156, 11, 11);
+  background-color: rgb(50, 11, 156);
 }
 .infomation{
   width: 50%;
-  background-color: rgb(163, 4, 4);
+  background-color: rgb(50, 11, 156);
   overflow-y: scroll;
   color: white;
 }
@@ -25,15 +25,19 @@
 hr{
   width: 80%;
   color: yellow;
-  border: 1px solid yellow;
+  border: 1px solid rgb(255, 0, 0);
 }
 .canvas{
   margin: 5%;
-  height: 90%;
+  height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+}
+.canvas div{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .namePokemon{
   width: 100%;
@@ -47,18 +51,25 @@ hr{
   margin: 10px;
   border-radius: 10px;
   border: 1px double yellow ;
+  height: auto;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: rgba(63, 63, 63, 0.13);
 }
 .section h2{
   margin: 0;
   text-align: center;
 }
 .stacks{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  padding-top: 20px;
+  gap: 20px;
+  grid-auto-rows: minmax(0%, 100%);
 }
 .stacks p{
-  width: 100px;
+  padding: 0;
+  margin: 0;
 }
 .types{
   display: flex;
@@ -70,6 +81,43 @@ hr{
   width: 40%;
   text-align: center;
   margin: 10px;
-  background-color: rgb(30, 34, 34);
+  background-color: rgb(38, 41, 11);
   border-radius: 10px;
+}
+.evolution{
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  margin: 10px auto;
+  background-color: rgb(26, 59, 6);
+  border-radius: 10px;
+}
+.pokemonSelet{
+  width: 100%;
+
+}
+.pokemonSelet select{
+  width: 80%;
+  margin: 10px 10%;
+  padding: 20px;
+  font-size: 2.1rem;
+  text-transform: capitalize;
+  background-color: rgba(6, 35, 78, 0.582);
+  color: white;
+  text-align: center;
+}
+@media (max-width: 750px) {
+  .pokedex{
+    flex-direction: column;
+  }
+  .modelSection{
+    width: 100%;
+
+    position: relative;
+  }
+  .infomation{
+    overflow-y:unset;
+    width: 100%;
+    
+  }
 }

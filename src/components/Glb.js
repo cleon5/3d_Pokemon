@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import {
   useGLTF,
   useFBX,
@@ -12,22 +12,19 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import { CircleGeometry } from "three";
 
-function Glb({pokemon=''}) {
-  //const group = useRef()
-  //const { nodes, materials } = useGLTF('/Bulbasaur.glt')
-  /*const x = ()=> {
-      let fbx = useFBX('suzanne/suzanne.fbx')
-      return <primitive object={fbx} />
-    }*/
-  const models = [
-    "./pokemons/bulbasaur.glb",
-    "./pokemons/charmander.glb",
-    "./pokemons/squirtle.glb",
-  ];
-  const gltf = useLoader(GLTFLoader, models[2]);
-  const obj = useLoader(OBJLoader, "./models/IronMan.obj");
-  const fbx = useLoader(FBXLoader, "./models/IronMan.fbx");
-
+function Glb({pokemon, select, model, forceUpdate}) {
+  const gltf = useLoader(GLTFLoader, model);
+  const primitive = () =>{
+    return <primitive
+    object={gltf.scene}
+    position={[0, 0, 0]}
+    children-0-castShadow
+  />
+  }
+  const upda=(e)=>{
+    select(e.target.value)
+    forceUpdate()
+  }
 
   return (
     <div className="canvas">
@@ -36,15 +33,20 @@ function Glb({pokemon=''}) {
         <directionalLight position={[2, 3, 1]} />
         <directionalLight position={[-2, 3, 1]} />
 
-        <primitive
-          object={gltf.scene}
-          position={[0, 0, 0]}
-          children-0-castShadow
-        />
+        {primitive()}
         <Circle />
         <OrbitControls target={[0, 0, 0]} />
       </Canvas>
-      <p className="namePokemon">{pokemon}</p>
+      <div className="pokemonSelet">
+        <select onChange={(e)=> upda(e)}>
+          {
+            pokemon.length > 0 && pokemon.map((poke,key)=>
+              <option key={key}  value={poke.id}>{poke.pokemon}</option>
+            )
+          }
+        </select>
+      </div>
+      
     </div>
   );
 }
